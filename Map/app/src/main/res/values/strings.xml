@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">WalkTalk</string>
+    <string name="google_maps_key">AIzaSyDwkclodFPJbUM_rUZ8mhizy160VAaCcXI</string>
+
+    <string-array name="numbers">
+        <item>Choose type of Walk</item>
+        <item>City</item>
+        <item>Nature</item>
+    </string-array>
+
+    <string-array name="time">
+        <item>Any Length</item>
+        <item>15 Min</item>
+        <item>30 Min</item>
+        <item>45 Min</item>
+        <item>60 Min</item>
+    </string-array>
+
+</resources>
