@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:ignore="SpeakableTextPresentCheck">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/mapFrag"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="410dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"/>
+
+        <ImageView
+            android:id="@+id/walktalk"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_1" />
+
+        <ImageButton
+            android:id="@+id/lg"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/userprof"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/favourite"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#d3d3d3"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:text="Favourite Walk"
+            android:layout_below="@id/mapFrag"/>
+
+        <FrameLayout
+            android:id="@+id/favouriteBox"
+            android:layout_width="325dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/favourite">
+
+            <ImageButton
+                android:id="@+id/favouriteButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/green" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/city"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="20dp"/>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/round"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Dalian Square"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="60 min Walk"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City/Market"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 - 7 km"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tab1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#d3d3d3"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:text="Select Walk"
+            android:layout_below="@id/favouriteBox"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tab1"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:text="Walk Type:"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textAlignment="textEnd"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:spinnerMode="dialog"
+                    android:id="@+id/spinner1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="match_parent"
+                    android:text="Time:"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:textAlignment="textEnd"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:spinnerMode="dialog"
+                    android:id="@+id/spinner2"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tab2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#d3d3d3"
+            android:textSize="10sp"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/types"/>
+
+        <LinearLayout
+            android:id="@+id/startRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tab2"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/directionMap"
+                android:layout_width="180dp"
+                android:layout_height="70dp"
+                android:backgroundTint="#006064"
+                android:layout_marginRight="10dp"
+                android:text="Chinese Route" />
+
+            <Button
+                android:id="@+id/nonChineseButton"
+                android:layout_width="180dp"
+                android:layout_height="70dp"
+                android:backgroundTint="#006064"
+                android:text="Non Chinese Route" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/helpButton"
+            android:layout_width="73dp"
+            android:layout_height="75dp"
+            android:background="@drawable/help"
+            android:layout_below="@id/startRoute"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/tab3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="#d3d3d3"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:text="Recommended Routes"
+            android:layout_below="@id/helpButton"
+            android:layout_marginTop="20dp"/>
+
+        <FrameLayout
+            android:id="@+id/reco1"
+            android:layout_width="325dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tab3">
+
+            <ImageButton
+                android:id="@+id/reco1Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/brown" />
+
+            <ImageView
+                android:id="@+id/reco1Image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/froggg"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="20dp"/>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/round"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp" />
+
+                <TextView
+                    android:id="@+id/reco1Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="No Routes"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/reco1Text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/reco1Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/reco1Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/reco2"
+            android:layout_width="325dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/reco1">
+
+            <ImageButton
+                android:id="@+id/reco2Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/brown" />
+
+            <ImageView
+                android:id="@+id/reco2Image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/froggg"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="20dp"/>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/round"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp" />
+
+                <TextView
+                    android:id="@+id/reco2Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="No routes"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/reco2Text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/reco2Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="10dp"/>
+                <TextView
+                    android:id="@+id/reco2Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/reco3"
+            android:layout_width="325dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/reco2">
+
+            <ImageButton
+                android:id="@+id/reco3Button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/brown" />
+
+            <ImageView
+                android:id="@+id/reco3Image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/froggg"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="20dp"/>
+
+            <FrameLayout
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/round"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="20dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="20dp" />
+
+                <TextView
+                    android:id="@+id/reco3Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="No Routes"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/reco3Text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/reco3Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:text="No routes" />
+                <TextView
+                    android:id="@+id/reco3Text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No routes"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="10dp"/>
+
+            </FrameLayout>
+        </FrameLayout>
+    </RelativeLayout>
+</ScrollView>
